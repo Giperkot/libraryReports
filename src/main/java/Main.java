@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import org.hibernate.SessionFactory;
 import utils.HibernateSessionFactory;
 
 
@@ -15,12 +16,7 @@ import utils.HibernateSessionFactory;
  */
 public class Main extends Application {
 
-
-
     public static void main (String... args) {
-
-        Main main = new Main();
-
         launch(args);
     }
 
@@ -41,5 +37,10 @@ public class Main extends Application {
                 HibernateSessionFactory.shutdown();
             }
         }));
+
+        new Thread(() -> {
+            // Стартовать Hibernate
+            SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
+        }).start();
     }
 }
