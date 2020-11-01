@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="795.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.MainController">
+  <children>
+    <SplitPane dividerPositions="0.4968474148802018" focusTraversable="true" prefHeight="95.0" prefWidth="795.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <Button layoutY="56.0" mnemonicParsing="false" onAction="#getBooksReport" text="Где книга" AnchorPane.leftAnchor="104.0" />
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <Button layoutY="58.0" mnemonicParsing="false" onAction="#getReaderReport" text="Информация о читателях" AnchorPane.rightAnchor="124.0" />
+                  <DatePicker fx:id="periodFromDateField" layoutX="15.0" layoutY="26.0" />
+                  <DatePicker fx:id="periodToDateField" layoutX="208.0" layoutY="26.0" />
+                  <Label layoutX="22.0" layoutY="6.0" text="С" />
+                  <Label layoutX="208.0" layoutY="6.0" text="По" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <TableView fx:id="bookReportTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="id" />
+        <TableColumn prefWidth="223.0" text="Название" />
+            <TableColumn minWidth="0.0" prefWidth="422.0" text="Местонаходжение" />
+      </columns>
+    </TableView>
+      <TableView fx:id="readerReportTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="id" />
+          <TableColumn prefWidth="75.0" text="Фамилия" />
+            <TableColumn prefWidth="75.0" text="Имя" />
+            <TableColumn prefWidth="75.0" text="Отчество" />
+            <TableColumn prefWidth="75.0" text="Книг взято" />
+            <TableColumn prefWidth="124.0" text="Книг возвращено" />
+            <TableColumn prefWidth="118.0" text="Любимый жанр" />
+        </columns>
+      </TableView>
+  </children>
+</AnchorPane>
